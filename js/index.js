@@ -60,3 +60,37 @@ window.addEventListener(
 window.addEventListener("load", e => {
   console.log("page successfully loaded");
 });
+
+// 11) mouse enter event to change the pictures in the body
+const mouseImg = document.querySelector(".intro img");
+mouseImg.addEventListener("mouseenter", () => {
+  mouseImg.src =
+    "https://images.unsplash.com/photo-1496843916299-590492c751f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80";
+});
+const bodyImg = document.querySelector(".img-fluid");
+bodyImg.addEventListener("mouseenter", () => {
+  bodyImg.src =
+    "https://images.unsplash.com/photo-1498940757830-82f7813bf178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80";
+});
+
+// 12) scale the buttons on mouse over
+const btnScale = document.querySelectorAll(".btn");
+btnScale.forEach(btn => {
+  btn.addEventListener("mouseover", e => {
+    btn.style.transform = "scale(0.5)";
+    btn.style.transition = "all 0.3s";
+    e.stopPropagation();
+  });
+});
+btnScale.forEach(btn => {
+  btn.addEventListener("mouseleave", e => {
+    btn.style.transform = "scale(1)";
+    e.stopPropagation();
+  });
+});
+
+// 13) change the width of a div on wheel scroll
+const scaleDiv = document.querySelector(".text-content");
+scaleDiv.addEventListener("wheel", e => {
+  scaleDiv.style.width = "100px";
+});
